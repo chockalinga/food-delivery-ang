@@ -1,0 +1,38 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+      <h1 style="text-align: center">MENU</h1><br>
+      <div class="row" [hidden]="!deleteMessage">
+           
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                        <div class="alert alert-info alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <strong>menu item Data Deleted</strong>
+                        </div>
+                </div>
+                <div class="col-sm-4"></div>
+        </div>           
+    </div>
+
+  
+  <div class="panel-body">
+      <table  class="table table-hover table-sm" datatable [dtOptions]="dtOptions"
+      [dtTrigger]="dtTrigger"  >
+          <thead class="thead-light">
+              <tr>
+                  <th>menu Name</th>
+                  <th>menu price</th>
+                  <th>menu destination</th>
+              </tr>
+          </thead>
+          <tbody>
+               <tr *ngFor="let menu of menus ">
+                  <td>{{menu.menu_name}}</td>
+                  <td>{{menu.menu_price}}</td>
+                  <td>{{menu.menu_destination}}</td>
+                    <button (click)="addToCart(menu)" class='btn btn-info'>ADD TO CART</button>
+                </tr> 
+          </tbody><br>
+      </table>
+  </div>
+</div> 
