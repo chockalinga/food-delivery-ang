@@ -1,0 +1,38 @@
+<div class="card text-center">
+    <div class="card-header">
+      Cart
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Menu added to cart</h5>
+      <div class="cart-item">
+        <table class="table table-striped">
+            <thead>
+              <tr style="align-items:center;"> 
+                <th>menu name</th>
+                <th>menu price</th>
+                <th>menu destination</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of items" style="align-items:center;"> 
+                   <td>{{item.menu_name}}</td>
+                   <td>{{item.menu_price | currency}}</td>
+                   <td>{{item.menu_destination}}</td>
+                 </tr> 
+           </tbody><br>
+       </table>
+      </div>
+      <button (click)="clearCart()" class='btn btn-primary'>Place order</button>
+    </div>
+    <div class="card-footer text-muted">
+      Today
+    </div>
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <div [hidden]="!submitted">
+               <h4>order placed SuccessFully!</h4>
+            </div>      
+        </div>
+        <div class="col-sm-4"></div>
+  </div>
